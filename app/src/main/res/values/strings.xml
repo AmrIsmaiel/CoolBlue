@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">customer</string>
+    <string name="search">Search</string>
+    <string name="reviews_average">%s / 10</string>
+    <string name="price">Price: %s</string>
+    <string name="available_count">available : %s</string>
+    <string name="next_day_delivery">aNext Day Delivery: %s</string>
+    <string name="search_for_products">Search for products</string>
+</resources>
