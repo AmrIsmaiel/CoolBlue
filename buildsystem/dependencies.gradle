@@ -1,0 +1,188 @@
+ext {
+    // App dependencies
+    appcompat = '1.4.1'
+    material_design = '1.6.0'
+    recycler_view = '1.2.1'
+    androidxLegacyVersion = '1.0.0'
+    androidXWorkVersion = '2.7.0'
+    constraintLayoutVersion = '2.1.3'
+    cardViewVersion = '1.0.0'
+    annotationVersion = '1.3.0'
+    rtlViewPagerVersion = '1.0.2'
+    sharedPrefVersion = '1.1.1'
+
+
+    androidLifecycleVersion = '2.2.0'
+    archLifecycleVersion = '2.4.1'
+    viewModelLifecycleVersion = '2.4.1'
+
+    // Test dependencies
+    junit = '4.13.2'
+    mockito_inline = '4.3.1'
+    mockito_kotlin = '1.6.0'
+    arch_lifecycle_core_testing = '2.1.0'
+    assertj_core = '3.22.0'
+
+    //Testing
+    robolectricVersion = '4.6.1'
+    testRunnerVersion = '1.4.0'
+    testJUnitKtx = '1.1.3'
+    mockitoVersion = '4.3.1'
+    dexmakerVersion = '1.0'
+    testingSupportLibVersion = '0.1'
+
+    // Instrumentation-test dependencies
+    test_runner = '1.4.0'
+    test_rules = '1.4.0'
+    espresso_core = '3.4.0'
+    dexopener = "0.12.1"
+    mockito_android = '4.3.1'
+    kotlinTest = "2.0.7"
+
+    // Data Dependencies
+    dagger = '2.21'
+    daggerHiltVersion = '2.38.1'
+    daggerHiltAndroidXVersion = '1.0.0-alpha03'
+    sdp_android = '1.0.6'
+
+    // RX
+    rx_java = '2.2.5'
+    rx_android = '2.1.0'
+
+    // Retrofit
+    retrofit = '2.9.0'
+    okhttp = '5.0.0-alpha.3'
+    okhttp_logging = '5.0.0-alpha.3'
+
+    // Data Binding
+    dataBindingVersion = '2.21'
+
+    // Parceler
+    parceler_api = '1.1.13'
+
+    // SwipeRefreshLayout
+    swipe_refresh_layout = '1.1.0'
+
+    //Glide
+    glideVersion = '4.12.0'
+
+    //IoGrpc
+    ioGrpcVersion = '1.40.0'
+
+    // Packages
+    androidXLifecycle = 'androidx.lifecycle'
+    ioGrpcPackage = 'io.grpc'
+    reactivePackage = 'io.reactivex.rxjava2'
+    daggerPackage = 'com.google.dagger'
+    daggerAndroidXPackage = 'androidx.hilt'
+    dataBindingPackage = 'com.android.databinding'
+    androidXLegacyPackage = 'androidx.legacy'
+    androidXWorkPackage = 'androidx.work'
+    constraintLayoutPackage = 'androidx.constraintlayout:constraintlayout'
+    sharedPrefPackage = 'androidx.preference'
+
+    supportLibraryDependencies = [
+            appcompat         : "androidx.appcompat:appcompat:$appcompat",
+            materialDesign    : "com.google.android.material:material:$material_design",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            cardView          : "androidx.cardview:cardview:$cardViewVersion",
+            androidXAnnotation: "androidx.annotation:annotation:$annotationVersion",
+            rtlVirePager      : "com.duolingo.open:rtl-viewpager:$rtlViewPagerVersion"
+    ]
+
+    ioGrpcDependencies = [
+            ioGrpcOkHttp: buildDependency(ioGrpcPackage, 'grpc-okhttp', ioGrpcVersion),
+    ]
+
+    recyclerViewDependencies = [
+            recyclerView: "androidx.recyclerview:recyclerview:$recycler_view"
+    ]
+
+    androidXDependencies = [
+            androidXLegacy: buildDependency(androidXLegacyPackage, 'legacy-support-v4', androidxLegacyVersion),
+            androidXWork  : buildDependency(androidXWorkPackage, 'work-runtime-ktx', androidXWorkVersion),
+            sharedPreferences: buildDependency(sharedPrefPackage ,"preference-ktx", sharedPrefVersion)
+    ]
+
+    architectureComponentsDependencies = [
+            archLifecycleRuntime   : buildDependency(androidXLifecycle, 'lifecycle-runtime', archLifecycleVersion),
+            archLifecycleRuntimeKtx: buildDependency(androidXLifecycle, 'lifecycle-runtime-ktx', archLifecycleVersion),
+            archLifecycleJava8     : buildDependency(androidXLifecycle, 'lifecycle-common-java8', archLifecycleVersion),
+            viewmodel              : buildDependency(androidXLifecycle, 'lifecycle-viewmodel-ktx', viewModelLifecycleVersion)
+    ]
+
+    daggerHiltDependencies = [
+            daggerHilt                 : buildDependency(daggerPackage, 'hilt-android', daggerHiltVersion),
+            daggerHiltCompiler         : buildDependency(daggerPackage, 'hilt-android-compiler', daggerHiltVersion),
+            daggerHiltAndroidXViewModel: buildDependency(daggerAndroidXPackage, 'hilt-lifecycle-viewmodel', daggerHiltAndroidXVersion),
+            daggerHiltAndroidXCompiler : buildDependency(daggerAndroidXPackage, 'hilt-compiler', daggerHiltAndroidXVersion)
+    ]
+
+    //Network libraries
+    retrofitDependencies = [
+            retrofit        : "com.squareup.retrofit2:retrofit:${retrofit}",
+            converterScalars: "com.squareup.retrofit2:converter-scalars:${retrofit}",
+            retrofitRx      : "com.squareup.retrofit2:adapter-rxjava2:${retrofit}",
+            converterGson   : "com.squareup.retrofit2:converter-gson:${retrofit}",
+            okhttp          : "com.squareup.okhttp3:okhttp:${okhttp}",
+            okhttpLogging   : "com.squareup.okhttp3:logging-interceptor:${okhttp_logging}"
+    ]
+
+    rxDependencies = [
+            rxJava   : buildDependency(reactivePackage, 'rxjava', rx_java),
+            rxAndroid: buildDependency(reactivePackage, 'rxandroid', rx_android)
+    ]
+
+    dataDependencies = [
+            parcelerApi: "org.parceler:parceler-api:${parceler_api}",
+            parceler   : "org.parceler:parceler:${parceler_api}",
+            sdpAndroid : "com.intuit.sdp:sdp-android:${sdp_android}",
+            sspAndroid : "com.intuit.ssp:ssp-android:${sdp_android}"
+    ]
+
+    presentationDependencies = [
+            swipeRefreshLayout: "androidx.swiperefreshlayout:swiperefreshlayout:${swipe_refresh_layout}"
+    ]
+
+
+    unitTestingDependencies = [
+            jUnit                   : "junit:junit:$junit",
+            mockitoInline           : "org.mockito:mockito-inline:$mockito_inline",
+            mockitoKotlin           : "com.nhaarman:mockito-kotlin:$mockito_kotlin",
+            archLifecycleCoreTesting: "androidx.arch.core:core-testing:$arch_lifecycle_core_testing",
+            assertjCore             : "org.assertj:assertj-core:$assertj_core",
+            kotlinTest              : "io.kotlintest:kotlintest:$kotlinTest"
+    ]
+
+    instrumentationAndUiTestingDependencies = [
+            testRunner            : "androidx.test:runner:$test_runner",
+            testRules             : "androidx.test:rules:$test_rules",
+            espressoCore          : "androidx.test.espresso:espresso-core:$espresso_core",
+            espressoContrib       : "androidx.test.espresso:espresso-contrib:$espresso_core",
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espresso_core",
+            dexOpener             : "com.github.tmurakami:dexopener:$dexopener",
+            mockitoKotlin         : "com.nhaarman:mockito-kotlin:$mockito_kotlin",
+            mockitoAndroid        : "org.mockito:mockito-android:$mockito_android"
+    ]
+
+    dataTestDependencies = [
+            testCore       : "androidx.test:core:${testRunnerVersion}",
+            testingJUnitKtx: "androidx.test.ext:junit-ktx:${testJUnitKtx}",
+            mockito        : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric    : "org.robolectric:robolectric:${robolectricVersion}"
+    ]
+
+    presentationTestDependencies = [
+            dexmaker         : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}"
+    ]
+
+    imageLoadingDependencies = [
+            glide: "com.github.bumptech.glide:glide:${glideVersion}"
+    ]
+}
+
+static def buildDependency(def pack, def dependency, def version) {
+    return "${pack}:${dependency}:${version}"
+}

@@ -1,0 +1,127 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.coolblue.customer"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', "BASE_URL", '"https://bdk0sta2n0.execute-api.eu-west-1.amazonaws.com/mobile-assignment/"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        // Open view binding
+        viewBinding true
+    }
+    packagingOptions {
+        exclude("META-INF/*.kotlin_module")
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0"
+
+    implementation supportLibraryDependencies.appcompat
+    implementation supportLibraryDependencies.materialDesign
+    implementation supportLibraryDependencies.constraintLayout
+    implementation supportLibraryDependencies.cardView
+    implementation supportLibraryDependencies.androidXAnnotation
+
+    implementation architectureComponentsDependencies.archLifecycleRuntime
+    implementation architectureComponentsDependencies.archLifecycleRuntimeKtx
+    implementation architectureComponentsDependencies.archLifecycleJava8
+    implementation architectureComponentsDependencies.viewmodel
+    //androidXDependencies
+    implementation androidXDependencies.androidXLegacy
+    implementation androidXDependencies.androidXWork
+    implementation androidXDependencies.sharedPreferences
+
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+    //RecyclerView
+    implementation recyclerViewDependencies.recyclerView
+
+    //Dagger-Hilt
+    implementation daggerHiltDependencies.daggerHilt
+    kapt daggerHiltDependencies.daggerHiltCompiler
+    implementation daggerHiltDependencies.daggerHiltAndroidXViewModel
+    kapt daggerHiltDependencies.daggerHiltAndroidXCompiler
+
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.converterScalars
+    implementation retrofitDependencies.converterGson
+    implementation retrofitDependencies.okhttp
+    implementation retrofitDependencies.okhttpLogging
+    implementation ioGrpcDependencies.ioGrpcOkHttp
+
+    implementation presentationDependencies.swipeRefreshLayout
+
+
+    //Glide
+    implementation imageLoadingDependencies.glide
+
+    //Sdp - ssp
+    implementation dataDependencies.sdpAndroid
+    implementation dataDependencies.sspAndroid
+
+    //RX
+    implementation rxDependencies.rxJava
+    implementation rxDependencies.rxAndroid
+    implementation retrofitDependencies.retrofitRx
+
+    //Unit testing
+    testImplementation unitTestingDependencies.jUnit
+    testImplementation unitTestingDependencies.mockitoInline
+    testImplementation unitTestingDependencies.mockitoKotlin
+    testImplementation unitTestingDependencies.archLifecycleCoreTesting
+    testImplementation unitTestingDependencies.assertjCore
+    testImplementation unitTestingDependencies.kotlinTest
+
+    //Instrumentation & UI testing
+    androidTestImplementation instrumentationAndUiTestingDependencies.testRunner
+    androidTestImplementation instrumentationAndUiTestingDependencies.testRules
+    androidTestImplementation instrumentationAndUiTestingDependencies.espressoCore
+    androidTestImplementation instrumentationAndUiTestingDependencies.espressoContrib
+    implementation instrumentationAndUiTestingDependencies.espressoIdlingResource
+    androidTestImplementation instrumentationAndUiTestingDependencies.mockitoKotlin
+    androidTestImplementation instrumentationAndUiTestingDependencies.mockitoAndroid
+    androidTestImplementation unitTestingDependencies.kotlinTest
+
+    //Testing
+    testImplementation dataTestDependencies.testCore
+    testImplementation dataTestDependencies.mockito
+    androidTestImplementation dataTestDependencies.testCore
+    androidTestImplementation dataTestDependencies.testingJUnitKtx
+    androidTestImplementation dataTestDependencies.mockito
+}
